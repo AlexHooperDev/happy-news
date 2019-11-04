@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from "react";
-import Article from "../Article";
-
-import "../../App.scss";
+import React, { useEffect, useState } from "./node_modules/react";
 
 function Home() {
   const [articles, setArticles] = useState([]);
@@ -17,11 +14,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="wrapper">
-      {articles.map(article => {
-        return <Article {...article} />;
-      })}
-    </div>
+    <div></div>
   );
 }
 
