@@ -5,13 +5,13 @@ export const contextStore = React.createContext({
   setTest: () => { }
 });
 
-export default function StateProvider({ children }) {
+export default function StateProvider({ children }: any) {
 
   const setTest = () => {
     setStore({ ...store, test: true })
   }
 
-  const initialState: object = {
+  const initialState = {
     test: false,
     setTest: setTest
   };

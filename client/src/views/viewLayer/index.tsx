@@ -1,5 +1,17 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import { contextStore } from '../../store';
+
+import Header from '../../components/header';
 
 export default function ViewLayer() {
-  return <div>ViewLayer</div>;
+
+  const state = useContext(contextStore);
+
+  return (
+    <>
+      <Header />
+      {/* <Feed />
+      <BottomNav /> */}
+    </>
+  );
 }
