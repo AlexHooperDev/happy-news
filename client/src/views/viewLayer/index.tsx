@@ -1,7 +1,8 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { contextStore } from '../../store';
 
 import Header from '../../components/header';
+import BottomNav from '../../components/bottomNav';
 
 export default function ViewLayer() {
 
@@ -10,8 +11,8 @@ export default function ViewLayer() {
   return (
     <>
       <Header />
-      {/* <Feed />
-      <BottomNav /> */}
+      {/* <Feed /> */}
+      <BottomNav />
     </>
   );
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import HeaderWrapper from './style.tsx';
+import { HeaderWrapper } from './style';
 
 export default function Header() {
   return (
-    <div>Header</div>
+    <HeaderWrapper color='red'>Happy News</HeaderWrapper>
   );
 }
