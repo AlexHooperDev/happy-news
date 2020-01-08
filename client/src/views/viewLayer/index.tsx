@@ -1,17 +1,15 @@
-import React, { useContext } from "react";
-import { contextStore } from '../../store';
+import React from 'react';
 
-import Header from '../../components/header';
-import BottomNav from '../../components/bottomNav';
+import Header from '../../containers/header';
+import Feed from '../../containers/feed';
+import BottomNav from '../../containers/bottomNav';
 
 export default function ViewLayer() {
-
-  const state = useContext(contextStore);
 
   return (
     <>
       <Header />
-      {/* <Feed /> */}
+      <Feed />
       <BottomNav />
     </>
   );

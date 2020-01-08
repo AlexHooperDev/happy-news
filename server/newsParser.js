@@ -8,10 +8,11 @@ let articleStrings = [];
 
 function mapArticles(articles) {
   // grab strings from each article and put into array for AWS
-  fullArticles = articles.articles;
-  articles.articles.map(article => {
+  fullArticles = articles;
+  articles.map(article => {
     articleStrings = [...articleStrings, article.content];
   });
+  console.log(articleStrings);
 }
 
 async function parseNews(articles) {
@@ -21,14 +22,15 @@ async function parseNews(articles) {
 
   await comprehend.batchDetectSentiment(
     { LanguageCode: language, TextList: text },
-    function(err, data) {
+    function (err, data) {
       if (err) console.log(err, err.stack);
       else {
         console.log(data);
         // For each returned object in the ResultsList array,
         // add sentiment key and value to each articleStrings object
         data.ResultList.forEach((article, i) => {
-          fullArticles[i].sentiment = article.Sentiment;
+          fullArticles[i].sentiment = article.SentimentScore;
+          fullArticles[i].id = i;
         });
         return fullArticles;
       }
